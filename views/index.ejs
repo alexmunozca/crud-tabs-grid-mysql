@@ -1,0 +1,96 @@
+<%- include('layouts/cabecera.ejs'); %>
+<!-- Se debe adicionar 1 al maximo por cada columna agregada -->
+      <table class="pestañas" minino="0" maximo="1" id="<%= pestaña %>">
+         <tr class="pestañas__descripcion">
+            <th class="pestañas--inicio"></th>
+            <th class="pestañas--titulo" id="descripcion-0" onclick="activarTab(this)">Consulta</th>
+            <th class="pestañas--espacio">&nbsp;</th>
+            <th class="pestañas--titulo" id="descripcion-1" onclick="activarTab(this)">Información</th>
+            <th class="pestañas--final">&nbsp;</th>
+         </tr>
+         <tr class="pestañas__contenido">
+            <div class="pestañas__titulo">
+               <img class="pestañas__titulo__imagen" src="http://localhost:3000/images/t.ico">
+               <P class="pestañas__titulo__descripcion">Mantenimiento de articulos</P>
+               <!-- <p><%= pestaña %></p> -->
+            </div>
+<!-- Se debe adicionar 2 al colspan por cada columna agregada -->
+            <td class="pestañas__combo" colspan="5" id="tab-0">
+<!-- contenido-0 -->
+               <div class="pestañas__caja" id="contenido-0">
+                  <div class="pestañas__caja__tabla" id="contenido-0-tabla">
+                     <table class="pestañas__caja__tabla--area" id="contenido-0-area">
+                        <tr>
+                           <th class="pestañas__caja--titulos"></th>
+                           <th class="pestañas__caja--titulos">Código</th>
+                           <th class="pestañas__caja--titulos">Descripción</th>
+                        </tr>
+                        <% for(var i = 0; i < resultadoArticulos.length; i++) { %>
+                           <tr>
+                              <td class="pestañas__caja--datos" ><input type="radio" name="seleccion" <% if (i == 0) { %> checked <% } %>  ></td>
+                              <td class="pestañas__caja--datos"><%= resultadoArticulos[i].Codigo %></td>
+                              <td class="pestañas__caja--datos"><%= resultadoArticulos[i].Descripcion %></td>
+                           </tr>
+                        <%} %>   
+                     </table>            
+                  </div>
+                  <div class="pestañas__caja--filtros">
+                     <div class="pestaña__caja--campos">
+                        <label for="codigo">Código&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                        <label for="descripcion">Descripción</label>
+                     </div>
+                     <div>
+                        <form class="pestañas__caja__input--filtros" action="#" id="formulario-0" method="post">
+                           <input type="text" size="15" id="fcodigo" name="fcodigo">
+                           <input type="text" size="15" id="fdescripcion" name="fdescripcion">
+                        </form>
+                        <br>
+                        <div class="pestañas__caja__botones--filtros">
+                           <input type="submit" id="Filtrar" value="Filtrar">
+                           <input type="submit" id="Visualizar" value="Visualizar">
+                           <input type="submit" id="Refrescar" value="Refrescar">
+                           <input type="submit" id="Salir" value="Salir">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+<!-- contenido-1 -->
+               <div class="pestañas__caja" id="contenido-1">
+                  <form class="pestaña__caja__input" action="#" id="formulario-1" method="post">
+                     <div class="pestaña__caja--campos">
+                        <label for="codigo">Código:&emsp;&emsp;&emsp;</label>
+                        <input type="text" size="15" id="codigo" name="codigo" value="<%= codigo %>" onblur="campoLostfocus()" <%= proteger %>>
+                     </div>
+                     <hr align="left" width=500>
+                     <div class="pestaña__caja--campos">
+                        <label for="descripcion">Descripción:&emsp;</label>
+                        <input type="text" size="50" id="descripcion" name="descripcion" value="<%= descripcion %>">
+                     </div>
+                     <br>
+                     <div class="pestañas__caja--botones">
+                        <% if (botones === 'existe') { %>
+                           <input type="submit" id="Agregar" value="Agregar" disabled>
+                           <input type="submit" id="Modificar" value="Modificar">
+                           <input type="submit" id="Actualizar" value="Actualizar" disabled>
+                           <input type="submit" id="Eliminar" value="Eliminar">
+                        <% } else if (botones === 'actualiza') { %>
+                           <input type="submit" id="Agregar" value="Agregar" disabled>
+                           <input type="submit" id="Modificar" value="Modificar" disabled>
+                           <input type="submit" id="Actualizar" value="Actualizar">
+                           <input type="submit" id="Eliminar" value="Eliminar" disabled>
+                        <% } else { %>
+                           <input type="submit" id="Agregar" value="Agregar">
+                           <input type="submit" id="Modificar" value="Modificar" disabled>
+                           <input type="submit" id="Actualizar" value="Actualizar" disabled>
+                           <input type="submit" id="Eliminar" value="Eliminar" disabled>
+                        <% } %>
+                        <input type="submit" id="Renovar" value="Renovar">
+                     </div>
+                  </form>
+               </div>
+            </td>
+         </tr>
+      </table>
+
+   <script src="http://localhost:3000/javascripts/articulos.js"></script>
+   <%- include('layouts/pie.ejs'); %>

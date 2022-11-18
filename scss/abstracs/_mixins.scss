@@ -1,0 +1,25 @@
+//font size rem
+@mixin font-size($size) {
+    @if unitless($size) {
+        $size: $size * 1px;
+    }
+    font-size: $size;
+    font-size: ($size / $base-font-size) * 1rem;
+}
+
+// breakpoints
+@mixin pantalla($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $breakpoint-xs) { @content; }
+  }
+  @else if $media == tablet {
+//    @media  only screen and (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) { @content; }
+    @media  only screen and (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == desktop {
+    @media  only screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == huge {
+    @media  only screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) { @content; }
+  }
+}

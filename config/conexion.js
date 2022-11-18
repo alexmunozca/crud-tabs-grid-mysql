@@ -18,9 +18,9 @@ var baseArticulos = mysql.createConnection({
 baseArticulos.connect(
    (err)=>{
       if (!err) {
-         console.log('Conexión establecida');
+         console.log('Conexión establecida', err);
       } else {
-         console.log('Error de conexión');
+         console.log('Error de conexión', err);
       }
    }
 );

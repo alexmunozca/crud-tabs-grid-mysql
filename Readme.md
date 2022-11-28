@@ -1,14 +1,8 @@
 # CRUD Tabs, Grid and Mysql
 
-<<<<<<< HEAD
-_CRUD utilizando pesta�as, grilla de datos con base en Mysql_
-
-## Instalación ??
-=======
 _CRUD utilizando pestañas, grilla de datos con base en Mysql_
 
 ## Instalación
->>>>>>> f4cf85ad0de78881b8f0eebb9b6bee4193b21e2f
 
 _El primer paso es clonar(descargar) el proyecto, lo primero es abrir la consola y escribir lo siguiente_
 

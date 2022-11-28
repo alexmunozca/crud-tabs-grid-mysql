@@ -1,8 +1,8 @@
 # CRUD Tabs, Grid and Mysql
 
-_CRUD utilizando pesta�as, grilla de datos con base en Mysql _
+_CRUD utilizando pesta�as, grilla de datos con base en Mysql_
 
-### Instalación ??
+## Instalación ??
 
 _El primer paso es clonar(descargar) el proyecto, lo primero es abrir la consola y escribir lo siguiente_
 
@@ -16,10 +16,9 @@ _El primer paso es descargar los modulos del proyecto, esto se hace con el sigui
 
 ```
 npm install
-
 ```
 
-### Script Base de datos 
+## Script Base de datos 
 
 ```
 CREATE DATABASE IF NOT EXISTS baseCrud;
@@ -39,13 +38,13 @@ INSERT INTO `articulos` (`Codigo`,`Descripcion`) VALUES
 ```
 ```
 Revisar el archivo en la carpeta /config/conexion.js para usuario y paswword de la base de datos
+se modifico el archivo para poder correr en Railway.app
 ```
 
 ## Despliegue
 
 ```
 npm start
-
 ```
 
 ## Pantalla

@@ -12,7 +12,7 @@ git clone https://github.com/alexmunozca/crud-tabs-grid-mysql
 
 ## Inicialización
 
-_El primer paso es descargar los modulos del proyecto, esto se hace con el siguiente comando_
+_El segundo paso es descargar los modulos del proyecto, esto se hace con el siguiente comando_
 
 ```
 npm install
